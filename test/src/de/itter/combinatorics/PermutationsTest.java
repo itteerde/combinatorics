@@ -6,16 +6,27 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class PermutationsTest {
 
+	Collection<Integer> c = null;
+	
+	@Before
+	public void setup(){
+		c = new Vector<Integer>();
+		for(int n=0;n<100;n++){
+			c.add(n);
+		}
+	}
+	
 	@Test
 	public void testGetPermutation() {
-		Collection<Integer> c = new Vector<Integer>();
 		@SuppressWarnings("unchecked")
 		Iterator<Integer> it = (Iterator<Integer>) Permutations.getPermutation(c, 0);
-		assertEquals(false, it.hasNext());
+		assertEquals(new Integer(0), it.next());
+		assertEquals(new Integer(100), new Integer(c.size()));
 	}
 
 }

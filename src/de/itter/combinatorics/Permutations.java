@@ -7,9 +7,7 @@ import java.util.Vector;
 public abstract class Permutations {
 
 	public static Iterator<?> getPermutation(Collection<?> c, int i){
-		@SuppressWarnings("rawtypes")
-		Vector<?> v = new Vector();
-		return v.iterator();
+		return c.iterator();
 	}
 	
 	public static Iterator<Iterator<?>> getPermutations(Collection<?> c){
